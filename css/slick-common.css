@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+main .slider {
+	width: 100%;
+}
+.slick-arrow { 
+	z-index:100;
+}
+.slick-next {
+	right: 45px;
+}
+.slick-prev {
+	left:24px;
+}
