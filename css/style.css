@@ -6,34 +6,38 @@
 html {
   font-size: 100%;
 }
+:root {
+  /* メインカラー（清潔感・信頼） */
+  --main-color: #2EA7E0;
+  /* サブカラー（柔らかさ・女性向け） */
+  --sub-color: #E8F6FD;
+  /* アクセント（CTA・ボタン） */
+  --accent-color: #FF8A00;
+  /* 強調アクセント（ホバーなど） */
+  --accent-hover: #E67600;
+  /* アクセント（ピンク）：女性スタッフ・安心感 */
+  --support-color: #FF8EAB;
+/* アクセントカラー：輝き・注目（ボタンなど） */
+  --accent-yellow-color: #FFD700;
+  /* テキストカラー */
+  --text-main: #333333;
+  --text-sub: #666666;
+  /* 背景 */
+  --bg-white: #FFFFFF;
+  --bg-light: #F7FBFE;
+  /* 枠線・区切り */
+  --border-color: #DCEAF3;
+  /* 成功・チェック（理由・強み） */
+  --success-color: #4CAF50;
+}
 body {
   font-family: "Noto Sans", Arial, sans-serif, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   line-height: 1.6;
-  color: var(--color-text-main);
-  background-color: var(--color-white);
-}
-:root {
-  /* ===== メインカラー（環境・企業カラー） ===== */
-  --color-main-green: #A0C862;
-  --color-main-green-dark: #76A84E;
-  /* ===== サブカラー（ソーラーパネル・技術） ===== */
-  --color-sub-blue: #3C9EC2;
-  /* ===== アクセントカラー（太陽・強調） ===== */
-  --color-accent-orange: #F5B147;
-  /* ===== 装飾カラー（ロゴ蜂用・必要に応じて） ===== */
-  --color-bee-brown: #624D21;
-  /* ===== ベースカラー ===== */
-  --color-white: #FFFFFF;
-  --color-bg-light: #f7f7f7;
-  /* ===== テキストカラー ===== */
-  --color-text-main: #333333;
-  --color-text-sub: #555555;
-  --color-text-light: #777777;
-  /* ===== ボーダー・区切り ===== */
-  --color-border-light: #E5E5E5;
+  color: var(--text-main);
+  background-color: var(--bg-light);
 }
 a {
-  color: var(--color-text-main);
+  color: var(--text-main);
   text-decoration: none;
   transition: ease 0.3s;
 }
