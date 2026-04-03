@@ -98,7 +98,7 @@ section {
   border-radius: 2px;
 }
 .bg-light {
-  background-color: var(--bg-light);
+  background-color: var(--bg-light);  
 }
 .text {
   line-height: 30px;
@@ -358,7 +358,7 @@ service
 -------------------------------- */
 #service {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
 }
 #service .title {
   padding-left: 8px;
@@ -413,9 +413,9 @@ service
   object-fit: cover;
   display: block;
 }
-#service .list.flex {
+#service .list-2.flex {
   justify-content: space-between;
-  gap: 0 2%;
+  gap: 0 2%; 
   text-align: center;
 }
 #service .list.flex .text {
@@ -423,17 +423,99 @@ service
   padding: 10px;
   font-size: 1.2rem;
 }
-#service .list.flex .img {
+#service .list-2.flex .img {
   width: 100%;
   height: 300px;
   overflow: hidden;
 }
-#service .list.flex .img img {
+#service .list-2.flex .img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
+
+/* --------------------------------
+works
+-------------------------------- */
+#works .flex {
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 3%;
+  margin-bottom: 40px;
+}
+#works .flex .arrow {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+#works .flex .img {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#works .flex .img::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; 
+  padding: 5px 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+#works .flex .img.bef::before {
+  content: 'Before';
+  background-color: var(--text-sub) 
+}
+#works .flex .img.aft::before {
+  content: 'After'; 
+  background-color: var(--success-color);
+}
+#works .flex .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#works .disc {
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+#works .disc .title {
+  margin-bottom: 30px;
+  position: relative;
+}
+#works .disc .title::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  display: inline-block;
+  width: 100px;
+  height: 2px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+#works .disc .customer {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* --------------------------------
+message
+-------------------------------- */
+#message {
+  padding-top: 30px;
+}
+
+
+
 
 
 /* --------------------------------
