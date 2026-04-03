@@ -320,6 +320,7 @@ reason
   justify-content: space-between;
   gap: 0 2%;
   margin-bottom: 80px;
+  counter-reset: item;
 }
 #reason .flex .item {
   position: relative;
@@ -352,11 +353,9 @@ reason
   justify-content: center;
 
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
-#reason .flex {
-  counter-reset: item;
-}
+
 
 /* --------------------------------
 service
@@ -576,6 +575,64 @@ pikapika
 #pikapika .flex .text {
   margin-bottom: 40px;
 }
+
+/* --------------------------------
+flow
+-------------------------------- */
+#flow .flex {
+  gap: 0 1%;
+  counter-reset: item;
+}
+#flow .flex .arrow {
+  color: var(--main-color);
+  margin-top: 7%;
+}
+#flow .flex .item .img {
+  margin-bottom: 10px;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#flow .flex .item .img::before {
+  content: counter(item, decimal-leading-zero);
+  counter-increment: item;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  background: var(--main-color);
+  background: rgba(31, 58, 95, 0.8);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  font-size: 1rem;
+}
+#flow .flex .item .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#flow .flex .item .title {
+  text-align: center;
+  margin-bottom: 10px;
+} 
+#flow .flex .item .text {
+  font-size: 1rem;
+  line-height: 25px;
+}
+
 
 /* --------------------------------
 faq
