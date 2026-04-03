@@ -103,7 +103,7 @@ section {
   border-radius: 2px;
 }
 .bg-light {
-  background-color: var(--bg-light);77  
+  background-color: var(--bg-light);  
 }
 .text {
   line-height: 30px;
@@ -375,7 +375,7 @@ service
   justify-content: space-between;
 
 }
-#service .house .air.flex .disc,
+#service .house .air.flex .desc,
 #service .house .air.flex .flex {
   width: 50%;
 }
@@ -458,6 +458,7 @@ works
   width: 100%;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 #works .flex .img::before {
   position: absolute;
@@ -487,16 +488,16 @@ works
   object-fit: cover;
   display: block;
 }
-#works .disc {
+#works .desc {
   padding: 30px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   margin-bottom: 50px;
 }
-#works .disc .title {
+#works .desc .title {
   margin-bottom: 30px;
   position: relative;
 }
-#works .disc .title::before {
+#works .desc .title::before {
   content: '';
   position: absolute;
   bottom: -8px;
@@ -506,7 +507,7 @@ works
   background-color: var(--accent-color);
   border-radius: 2px;
 }
-#works .disc .customer {
+#works .desc .customer {
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 20px;
@@ -526,6 +527,7 @@ message
   width: 55%;
   height: 400px;
   overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 #message .flex .img img {
   width: 100%;
@@ -556,6 +558,7 @@ pikapika
   width: 50%;
   height: 500px;
   overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 #pikapika .flex .img img {
   height: 100%;
@@ -609,8 +612,44 @@ faq
   
 }
 
-
-
+/* --------------------------------
+aboutus
+-------------------------------- */
+#aboutus .flex {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+#aboutus .flex .img,
+#aboutus .flex .desc {
+  width: 45%;
+}
+#aboutus .flex .img .inner-img {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+#aboutus .flex .img .inner-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+#aboutus .flex .desc .text {
+  margin-bottom: 10px;
+}
+#aboutus .map iframe {
+  width: 100%;
+  height: 300px;
+}
+#aboutus .flex .line {
+  text-align: center;
+  width: 100%;
+}
+#aboutus .flex .line img {
+  width: 40%;
+}
 
 /* --------------------------------
 footer
