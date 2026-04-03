@@ -34,7 +34,7 @@ body {
   font-family: "Noto Sans", Arial, sans-serif, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   line-height: 1.6;
   color: var(--text-main);
-  background-color: var(--bg-light);
+  background-color: var(--bg-white);
 }
 a {
   color: var(--text-main);
@@ -63,6 +63,9 @@ li {
   padding: 0 16px;
   margin: 0 auto;
 }
+.en {
+  font-family: Arial, Helvetica, sans-serif;
+}
 section {
   margin-bottom: 120px;
 }
@@ -75,11 +78,10 @@ section {
   position: relative;
 }
 .sec-title .en {
-  font-family: Arial, Helvetica, sans-serif;
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: normal;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: var(--text-main);
 }
 .sec-title:before {
@@ -94,6 +96,9 @@ section {
   transform: translateX(-50%);
   background-color: var(--accent-color);
   border-radius: 2px;
+}
+.bg-light {
+  background-color: var(--bg-light);
 }
 .text {
   line-height: 30px;
@@ -311,10 +316,103 @@ reason
   gap: 0 2%;
   margin-bottom: 80px;
 }
-#message .text {
-  text-align: center;
+#reason .flex .item {
+  position: relative;
+  list-style: none;
+}
+#reason .flex .item .img {
+  position: relative;
+}
+#reason .flex .item .img img {
+  width: 100%;
+  display: block;
+}
+#reason .flex .item .img::before {
+  content: counter(item, decimal-leading-zero);
+  counter-increment: item;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 35px;
+  height: 35px;
+
+  background: var(--main-color);
+  background: rgba(31, 58, 95, 0.8);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  font-size: 14px;
+}
+#reason .flex {
+  counter-reset: item;
 }
 
+/* --------------------------------
+service
+-------------------------------- */
+#service {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#service .title {
+  padding-left: 8px;
+  border-left: 5px solid var(--main-color);
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+}
+#service .flex {
+  justify-content: space-between;
+
+}
+#service .house .air.flex .disc,
+#service .house .air.flex .flex {
+  width: 50%;
+}
+#service .house .air.flex {
+  gap: 0 2%;
+  margin-bottom: 30px;
+}
+#service .house .air.flex .text-title {
+  background-color: var(--sub-color);
+  padding: 10px 0 10px 20px;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+#service .house .air.flex .list.flex {
+  flex-wrap: wrap;
+  padding-left: 30px;
+  width: 100%;
+  font-size: 1.1rem;
+}
+#service .house .air.flex .list.flex dt {
+  width: 60%;
+  margin-bottom: 20px;
+}
+#service .house .air.flex .list.flex dd {
+  width: 40%;
+  margin-bottom: 20px;
+}
+#service .house .air.flex .flex.img-flex {
+  gap: 0 2%;
+}
+#service .house .air.flex .flex .img {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+
+}
+#service .house .air .flex .img  img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 
 /* --------------------------------
