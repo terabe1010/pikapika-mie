@@ -987,6 +987,57 @@ SP
   section {
     margin-bottom: 80px;
   }
+  /* --------------------------------
+  [SP]animation
+  -------------------------------- */
+  #reason .flex .item.reveal:nth-child(1) {
+    transition-delay: 0s;
+  }
+  #reason .flex .item.reveal:nth-child(2) {
+    transition-delay: 0s;
+  }
+  #reason .flex .item.reveal:nth-child(3) {
+    transition-delay: 0s;
+  }
+  #reason .flex .item.reveal:nth-child(4) {
+    transition-delay: 0s;
+  }
+  #reason .flex .item.reveal:nth-child(5) {
+    transition-delay: 0s;
+  }
+  #service .house .air .flex .img.reveal:nth-child(1) {
+    transition-delay: 0s;
+  }
+  #service .house .air .flex .img.reveal:nth-child(2) {
+    transition-delay: 0s;
+  }
+  #service .list-2 .item.reveal:nth-child(1) {
+    transition-delay: 0s;
+  }
+  #service .list-2 .item.reveal:nth-child(2) {
+    transition-delay: 0s;
+  }
+  #service .list-2 .item.reveal:nth-child(3) {
+    transition-delay: 0s;
+  }
+  #works .flex .bef.reveal {
+    transition-delay: 0s;
+  }
+  #works .flex .aft.reveal {
+    transition-delay: 0s;
+  }
+  #flow .flex .item.reveal:nth-child(1) {
+    transition-delay: 0s;
+  }
+  #flow .flex .item.reveal:nth-child(3) {
+    transition-delay: 0s;
+  }
+  #flow .flex .item.reveal:nth-child(5) {
+    transition-delay: 0s;
+  }
+  #flow .flex .item.reveal:nth-child(7) {
+    transition-delay: 0s;
+  }
 
   /* --------------------------------
   [SP]header
