@@ -382,45 +382,50 @@ nav-menu
 reason
 -------------------------------- */
 #reason .flex {
-  justify-content: space-between;
-  gap: 0 2%;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px 3.5%;
   margin-bottom: 80px;
   counter-reset: item;
 }
 #reason .flex .item {
   position: relative;
   list-style: none;
+  width: 29%;
 }
 #reason .flex .item .img {
   position: relative;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
 }
 #reason .flex .item .img img {
   width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 #reason .flex .item .img::before {
   content: counter(item, decimal-leading-zero);
   counter-increment: item;
-
   position: absolute;
   top: 0;
   left: 0;
-
   width: 35px;
   height: 35px;
-
   background: var(--main-color);
   background: rgba(31, 58, 95, 0.8);
   color: #fff;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
-
+#reason .flex .item .text {
+  text-align: center;
+}
 
 /* --------------------------------
 service
