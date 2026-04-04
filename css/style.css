@@ -413,9 +413,10 @@ mainvisual
   background-color: var(--main-color);
   font-weight: normal;
   font-size: 1.05rem;
-  padding: 10px 12px;
+  padding: 11px 12px;
   color: var(--bg-white);
   white-space: nowrap;
+  display: block;
 }
 
 /* --------------------------------
@@ -1180,10 +1181,14 @@ SP
   #mainvisual .contact .right {
     display: none;
   }  
-  #mainvisual .contact .left .line .text,
-  #mainvisual .contact .left .tel {
+  #mainvisual .contact .left .line .text
+  {
     font-size: 0.85rem;
     padding: 8px 10px;
+  }
+  #mainvisual .contact .left .tel {
+    font-size: 0.85rem;
+    padding: 10px 10px;
   }
   #mainvisual .swiper-button-prev,
   #mainvisual .swiper-button-next  {
