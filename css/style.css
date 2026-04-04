@@ -214,7 +214,7 @@ header
   font-size: 1rem;
 }
 #nav .menu .item {
-  color: var(--color-text-main);
+  color: var(--text-main);
 }
 #nav .menu .item.no-border {
   border-right: 0
@@ -253,25 +253,71 @@ mainvisual
 -------------------------------- */
 #mainvisual {
   margin-bottom: 100px;
-}
-#mainvisual .img img {
-  height: 100vh;
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-}
-#mainvisual .slider .item .slider-img {
-  height: 100vh;
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
   position: relative;
 }
+
+
+#mainvisual .swiper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+#mainvisual  .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+}
+#mainvisual  .swiper-slide img {
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+#mainvisual .swiper-button-prev,
+#mainvisual .swiper-button-next {
+  color: var(--bg-white);
+  width: 48px;
+  height: 48px;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#mainvisual .swiper-button-prev {
+  left: 20px;
+}
+#mainvisual .swiper-button-next {
+  right: 20px;
+}
+#mainvisual .swiper-button-prev::after,
+#mainvisual .swiper-button-next::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* #mainvisual .img img {
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+} */
+/* #mainvisual .slider .item .slider-img {
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  position: relative; 
+}*/
 #mainvisual .concept-title {
   font-size: 2.5rem;
   position: absolute;
   top: 17%;
   right: 23%;
+  z-index: 3;
   line-height: 70px;
   letter-spacing: 0rem;
   color: var(--bg-white);
@@ -633,24 +679,19 @@ flow
   line-height: 25px;
 }
 
-
 /* --------------------------------
 faq
 -------------------------------- */
-#faq .faq-list .flex {
-  flex-wrap: wrap;
+#faq .faq-list {
+  display: grid;
+  grid-template-columns: 7% 90%;
+  column-gap: 3%;
 }
-#faq .faq-list .box {
-  margin-bottom: 30px;
+#faq .faq-list dt,
+#faq .faq-list dd {
+  margin: 0 0 20px 0;
 }
-#faq .faq-list .flex dt {
-  width: 7%;
-  margin-bottom: 20px;
-}
-#faq .faq-list .flex dd {
-  width: 90%;
-  margin-bottom: 20px;
-}
+
 #faq .faq-list .square-q,
 #faq .faq-list .square-a {
   border-radius: 3px;
@@ -668,6 +709,10 @@ faq
   color: var(--success-color);
   
 }
+
+
+
+
 
 /* --------------------------------
 aboutus
@@ -951,150 +996,7 @@ SP
     font-size: 1.1rem;
   }
 
-  /* --------------------------------
-  [SP]strengths
-  -------------------------------- */
-  #strengths {
-    padding: 40px 10px 30px;
-  }
-  #strengths .flex {
-    align-items: center;
-  }
-  #strengths .title {
-    margin-bottom: 10px;
-  }
-  #strengths .flex .item {
-    width: 100%;
-    margin-bottom: 40px;
-  }
-  #strengths .flex .item .img {
-    width: 70%;
-    margin: 0 auto;
-    margin-bottom: 20px;
-  }
 
-  /* --------------------------------
-  [SP]services
-  -------------------------------- */
-  #services .flex {
-    flex-direction: column;
-    display: flex;
-  }
-  #services .flex .img,
-  #services .flex .desc {
-    flex: 0 0 auto;
-  }
-  #services .flex .img {
-    margin-bottom: 30px;
-    height: 300px;
-    flex: none;
-  }
-  #services .flex.reverse {
-    flex-direction: column;
-  }
-  #services .flex .desc {
-    margin-left: 0;
-    width: 90%;
-    padding: 30px 20px;
-    margin-top: -50px;
-  }
-  #services .flex.reverse .desc {
-    margin-right: 0;
-  }
-  #services {
-    padding-top: 8px;
-    margin-bottom: 130px;
-  }
-  #services .sec-title {
-    font-size: 1.65rem;
-    margin-bottom: 56px;
-  }
-  #services .sec-title .en {
-    font-size: 1.05rem;
-  }
-
-  /* --------------------------------
-  [SP]works
-  -------------------------------- */
-  #works {
-    padding: 40px 10px 30px;
-  }
-  #works .text {
-    margin-bottom: 30px;
-    font-size: 1rem;
-  }
-  #works .flex {
-    gap: 40px 0;
-    margin-bottom: 30px;
-  } 
-  #works .flex .item {
-    width: 100%;
-  }
-  #works .flex .item .title {
-    margin-bottom: 35px;
-  }
-  #works .insta {
-    flex-direction: row;
-    padding: 25px 8px;
-    gap: 0 4%;
-  }
-  #works .insta .text {
-    font-size: 0.9rem;
-    margin-bottom: 0px;
-  }
-  #works .insta .link {
-    font-size: 0.9rem;
-  }
-  #works .insta .img {
-    width: 25%;
-  }
-  #works .insta .desc {
-    width: 70%;
-  }
-  #works .insta .img img {
-    height: auto;
-  }
-  #works .insta .new {
-    font-size: 0.85rem;
-  }
-
-  /* --------------------------------
-  [SP]Greetings
-  -------------------------------- */ 
-  #greetings {
-    padding: 0;
-  }
-  #greetings .text {
-    font-size: 1rem;
-    line-height: 30px;
-  }
-  #greetings .area {
-    padding: 20px 15px;
-  }
-
-  /* --------------------------------
-  [SP]about
-  -------------------------------- */
-  #about .flex {
-    gap: 30px 0;
-  }
-  #about .flex .left .img img {
-    width: 100%;
-  }
-  #about .flex .left,
-  #about .flex .right {
-    width: 100%;
-  }
-
-  /* --------------------------------
-  [SP]Contact
-  -------------------------------- */
-  #contact .sec-title {
-    margin-bottom: 80px;
-  }
-  #contact .cta {
-    margin-bottom: 60px;
-  }
 
   /* --------------------------------
   [SP]footer

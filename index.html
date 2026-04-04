@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Cache-Control" content="no-cache">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/ress.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="icon" href="./img/favicon.ico" />
@@ -17,9 +18,9 @@
   <link rel="stylesheet" href="./css/all.min.css">
   <!-- Java Script -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="./js/main.js"></script>
+  
   <script src="./js/jquery.inview.min.js"></script>
-  <!-- <script src="./js/include.js"></script> -->
+    <!-- <script src="./js/include.js"></script> -->
   <title>ピカピカ三重店｜三重県亀山市のハウスクリーニング・エアコン洗浄・水回り清掃</title>
   <meta name="description" content="三重県亀山市でハウスクリーニングをお探しならピカピカ三重店。エアコン洗浄・レンジフード・浴室・キッチン・引越し清掃まで対応。女性スタッフ中心で安心、見積無料・土日対応・即日対応も可能。LINEから簡単予約できます。">
   <!-- Google tag (gtag.js) -->
@@ -37,7 +38,7 @@
       <nav id="nav" class="pc">
         <ul class="menu">
           <li class="item"><a href="index.html">ホーム</a></li>
-          <li class="item"><a href="#services">サービス・料金</a></li>
+          <li class="item"><a href="#service">サービス・料金</a></li>
           <li class="item"><a href="#works">ビフォーアフター</a></li>
           <li class="item"><a href="#message">店長紹介</a></li>
           <li class="item"><a href="#flow">ご利用の流れ</a></li>
@@ -58,7 +59,7 @@
       </div>
       <ul class="menu">
         <li class="item"><a href="index.html">ホーム</a></li>
-        <li class="item"><a href="#services">サービス・料金</a></li>
+        <li class="item"><a href="#service">サービス・料金</a></li>
         <li class="item"><a href="#works">ビフォーアフター</a></li>
         <li class="item"><a href="#message">店長紹介</a></li>
         <li class="item"><a href="#flow">ご利用の流れ</a></li>
@@ -70,9 +71,25 @@
   
   <main>
     <div id="mainvisual">
-      <div class="img">
-        <img src="./img/kitchen10.jpg" alt="">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/kitchen10.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/img11.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/kitchen02.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/img12.jpg" alt="">
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
+      
       <h2 class="concept-title reveal">
         プロの技術でおうちをピカピカに
         <span class="sub-copy reveal">
@@ -365,14 +382,14 @@
             <div class="img">
               <img src="./img/img22.jpg" alt="">
             </div>
-            <p class="desc">
+            <div class="desc">
               <h3 class="title">
                 お問い合わせ
               </h3>
               <p class="text">
                 LINEやお電話で、お気軽にご相談ください。お掃除箇所のご希望を伺います。
               </p>
-            </p>
+            </div>
           </li>
           <li class="item arrow">
             <i class="fa-solid fa-play"></i>
@@ -435,50 +452,41 @@
           </span>
           よくあるご質問
         </h2>
+
         <dl class="faq-list">
-          <div class="box flex">
-            <dt><span class="square-q">Q</span></dt>
-            <dd>当日や急ぎの対応は可能ですか？</dd>
-            <dt><span class="square-a">A</span></dt>
-            <dd>
-              はい、スケジュールに空きがある場合は即日対応も可能です。お急ぎの場合はお電話にてご相談いただけますと、スムーズにご案内できます。
-            </dd>
-          </div>
-          <div class="box flex">
-            <dt><span class="square-q">Q</span></dt>
-            <dd>女性スタッフに対応してもらうことはできますか？</dd>
-            <dt><span class="square-a">A</span></dt>
-            <dd>
-              はい、ピカピカ三重店では女性スタッフを中心に対応しております。一人暮らしの方やご家族のお客様にも安心してご利用いただいております。
-            </dd>
-          </div>
-          <div class="box flex">
-            <dt><span class="square-q">Q</span></dt>
-            <dd>見積もりだけでもお願いできますか？</dd>
-            <dt><span class="square-a">A</span></dt>
-            <dd>
-              もちろん可能です。お見積もりは無料で承っております。内容をご確認いただいた上でご検討いただけますので、お気軽にご相談ください。
-            </dd>
-          </div>
-          <div class="box flex">
-            <dt><span class="square-q">Q</span></dt>
-            <dd>作業時間はどれくらいかかりますか？</dd>
-            <dt><span class="square-a">A</span></dt>
-            <dd>
-              作業内容によって異なりますが、目安として<br>
-              　・エアコン清掃：約1〜2時間<br>
-              　・レンジフード：約2〜3時間<br>
-              となります。事前に目安時間もご案内いたしますのでご安心ください。
-            </dd>
-          </div>
-          <div class="box flex">
-            <dt><span class="square-q">Q</span></dt>
-            <dd>汚れがひどい場合、追加料金はかかりますか？</dd>
-            <dt><span class="square-a">A</span></dt>
-            <dd>
-              基本的には事前のお見積もり内容で作業いたします。特殊な汚れや追加作業が必要な場合は、必ず事前にご説明・ご了承をいただいてから対応いたしますのでご安心ください。
-            </dd>
-          </div>
+          <dt><span class="square-q">Q</span></dt>
+          <dd>当日や急ぎの対応は可能ですか？</dd>
+          <dt><span class="square-a">A</span></dt>
+          <dd>
+            はい、スケジュールに空きがある場合は即日対応も可能です。お急ぎの場合はお電話にてご相談いただけますと、スムーズにご案内できます。
+          </dd>          
+          <dt><span class="square-q">Q</span></dt>
+          <dd>女性スタッフに対応してもらうことはできますか？</dd>
+          <dt><span class="square-a">A</span></dt>
+          <dd>
+            はい、ピカピカ三重店では女性スタッフを中心に対応しております。一人暮らしの方やご家族のお客様にも安心してご利用いただいております。
+          </dd>          
+          <dt><span class="square-q">Q</span></dt>
+          <dd>見積もりだけでもお願いできますか？</dd>
+          <dt><span class="square-a">A</span></dt>
+          <dd>
+            もちろん可能です。お見積もりは無料で承っております。内容をご確認いただいた上でご検討いただけますので、お気軽にご相談ください。
+          </dd>          
+          <dt><span class="square-q">Q</span></dt>
+          <dd>作業時間はどれくらいかかりますか？</dd>
+          <dt><span class="square-a">A</span></dt>
+          <dd>
+            作業内容によって異なりますが、目安として<br>
+            　・エアコン清掃：約1〜2時間<br>
+            　・レンジフード：約2〜3時間<br>
+            となります。事前に目安時間もご案内いたしますのでご安心ください。
+          </dd>          
+          <dt><span class="square-q">Q</span></dt>
+          <dd>汚れがひどい場合、追加料金はかかりますか？</dd>
+          <dt><span class="square-a">A</span></dt>
+          <dd>
+            基本的には事前のお見積もり内容で作業いたします。特殊な汚れや追加作業が必要な場合は、必ず事前にご説明・ご了承をいただいてから対応いたしますのでご安心ください。
+          </dd>
         </dl>
       </section>
     </div>
@@ -538,5 +546,7 @@
       &copy; ピカピカ三重店 │ All rights reserved
     </p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 </html>
