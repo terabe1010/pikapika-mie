@@ -196,7 +196,6 @@ animation
   transition-delay: 1.5s;
 }
 
-
 /* --------------------------------
 header
 -------------------------------- */
@@ -287,15 +286,12 @@ mainvisual
   position: relative;
   overflow: hidden;
 }
-
-
 #mainvisual .swiper {
   width: 100%;
   height: 100vh;
   position: relative;
   z-index: 1;
 }
-
 #mainvisual  .swiper-slide {
   display: flex;
   align-items: center;
@@ -347,7 +343,6 @@ mainvisual
 #mainvisual .character .img {
   width: clamp(340px, 34vw, 520px);
 }
-
 #mainvisual .character .img img {
   width: 100%;
   height: auto;
@@ -384,7 +379,6 @@ mainvisual
     0 0 4px rgba(255, 255, 255, 0.75),
     0 0 10px rgba(255, 255, 255, 0.45);
 }
-
 #mainvisual .coutry .list {
   display: flex;
   justify-content: space-between;
@@ -392,7 +386,6 @@ mainvisual
   width: min(100%, 360px);
   margin-bottom: 50px;
 }
-
 #mainvisual .contact {
   display: flex;
   justify-content: space-between;
@@ -424,7 +417,6 @@ mainvisual
   color: var(--bg-white);
   white-space: nowrap;
 }
-
 
 /* --------------------------------
 nav-menu
@@ -561,7 +553,6 @@ service
   width: 100%;
   height: 250px;
   overflow: hidden;
-
 }
 #service .house .air .flex .img  img {
   width: 100%;
@@ -623,7 +614,6 @@ works
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 #works .flex .img.bef::before {
   content: 'Before';
@@ -803,7 +793,6 @@ faq
   padding: 3px 8px;
   border: 1px solid var(--success-color);
 }
-
 #faq .faq-list .square-q {
   background-color: var(--success-color);
   color: var(--bg-white);
@@ -814,10 +803,6 @@ faq
   color: var(--success-color);
   
 }
-
-
-
-
 
 /* --------------------------------
 aboutus
@@ -836,6 +821,7 @@ aboutus
   height: 250px;
   overflow: hidden;
   margin-bottom: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 #aboutus .flex .img .inner-img img {
   height: 100%;
@@ -1255,7 +1241,6 @@ SP
   #service .list-2.flex .item .text {
     margin-bottom: 10px;
   }
-
 
   /* --------------------------------
   [SP]works
