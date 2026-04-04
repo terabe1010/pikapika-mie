@@ -1,12 +1,4 @@
 ﻿$(function () {
-  $(".js-fadeUp").on("inview", function () {
-    $(this).addClass("is-inview");
-  });
-
-  $(".p").on("inview", function () {
-    $(this).addClass("is-inview");
-  });
-
   $('a[href^="#"]').click(function () {
     const speed = 1500;
     const type = "swing";
@@ -55,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const targets = document.querySelectorAll(".reveal");
+  const targets = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
   if (!targets.length) return;
 
   if (!("IntersectionObserver" in window)) {
