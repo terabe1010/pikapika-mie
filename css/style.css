@@ -183,16 +183,16 @@ animation
 #works .flex .aft.reveal {
   transition-delay: 0.5s;
 }
-#flow .flex .item:nth-child(1) .img.reveal {
+#flow .flex .item.reveal:nth-child(1) {
   transition-delay: 0s;
 }
-#flow .flex .item:nth-child(3) .img.reveal {
+#flow .flex .item.reveal:nth-child(3) {
   transition-delay: 0.5s;
 }
-#flow .flex .item:nth-child(5) .img.reveal {
+#flow .flex .item.reveal:nth-child(5) {
   transition-delay: 1.0s;
 }
-#flow .flex .item:nth-child(7) .img.reveal {
+#flow .flex .item.reveal:nth-child(7) {
   transition-delay: 1.5s;
 }
 
@@ -663,6 +663,10 @@ flow
   color: var(--accent-color);
   margin-top: 7%;
 }
+#flow .flex .item.shadow {
+  width: 22%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
 #flow .flex .item .img {
   margin-bottom: 10px;
   height: 200px;
@@ -673,24 +677,18 @@ flow
 #flow .flex .item .img::before {
   content: counter(item, decimal-leading-zero);
   counter-increment: item;
-
   position: absolute;
   top: 0;
   left: 0;
-
   width: 45px;
   height: 45px;
-
   border-radius: 50%;
-
   background: var(--main-color);
   background: rgba(31, 58, 95, 0.8);
   color: #fff;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: bold;
   font-size: 1rem;
 }
@@ -707,6 +705,7 @@ flow
 #flow .flex .item .text {
   font-size: 1rem;
   line-height: 25px;
+  padding: 0 15px 10px 15px;
 }
 
 /* --------------------------------
@@ -1031,7 +1030,8 @@ SP
   [SP]reason
   -------------------------------- */
   #reason .flex .item {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    width: 100%;
   }
   #reason .flex .item .img {
     margin-bottom: 10px;
@@ -1138,7 +1138,9 @@ SP
     transform: rotate(90deg);
     margin-bottom: 20px;
   }
-
+  #flow .flex .item.shadow {
+    width: 100%;
+  }
   /* --------------------------------
   [SP]faq
   -------------------------------- */
