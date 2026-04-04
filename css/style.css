@@ -1148,7 +1148,7 @@ SP
     bottom: 0;
   }
   #mainvisual .character .img {
-    width: clamp(170px, 42vw, 240px);
+    width: clamp(170px, 60vw, 240px);
     opacity: 0.95;
   }
   #mainvisual .concept-title {
