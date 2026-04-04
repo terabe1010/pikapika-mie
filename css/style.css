@@ -392,6 +392,7 @@ reason
   position: relative;
   list-style: none;
   width: 29%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 #reason .flex .item .img {
   position: relative;
@@ -425,6 +426,7 @@ reason
 }
 #reason .flex .item .text {
   text-align: center;
+  padding: 10px 0;
 }
 
 /* --------------------------------
