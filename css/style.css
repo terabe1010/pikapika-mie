@@ -1042,7 +1042,9 @@ SP
     #message .flex .message {
     width: 100%;
   }
-
+  #message .flex .message .title {
+    text-align: center;
+  }
   /* --------------------------------
   [SP]pikapika
   -------------------------------- */
@@ -1056,6 +1058,43 @@ SP
   }
   #pikapika .flex .message {
     width: 100%;
+  }
+  #pikapika .flex .message .title {
+    text-align: center;
+  }
+  #pikapika .flex .message .link {
+    text-align: center;
+  }
+
+  /* --------------------------------
+  [SP]flow
+  -------------------------------- */
+  #flow .flex {
+    align-items: center;
+  }
+  #flow .flex .arrow {
+    transform: rotate(90deg);
+    margin-bottom: 20px;
+  }
+
+  /* --------------------------------
+  [SP]faq
+  -------------------------------- */
+  #faq .faq-list {
+    grid-template-columns: 10% 85%;
+    column-gap: 5%;
+  }
+
+  /* --------------------------------
+  [SP]aboutus
+  -------------------------------- */
+  #aboutus .flex .img,
+  #aboutus .flex .desc {
+    width: 100%;
+  }
+  #aboutus .flex .img .inner-img {
+    height: 200px;
+    margin-bottom: 10px;
   }
 
   /* --------------------------------
