@@ -333,22 +333,6 @@ mainvisual
   width: min(46%, 620px);
   z-index: 3;
 }
-#mainvisual .character {
-  position: absolute;
-  right: max(12px, 2vw);
-  bottom: 0;
-  z-index: 4;
-  pointer-events: none;
-}
-#mainvisual .character .img {
-  width: clamp(340px, 34vw, 520px);
-}
-#mainvisual .character .img img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.18));
-}
 #mainvisual .concept-title {
   font-size: 2.5rem;
   font-weight: 800;
@@ -418,6 +402,63 @@ mainvisual
   white-space: nowrap;
   display: block;
 }
+#mainvisual .mainvisual-cast {
+  position: absolute;
+  right: max(12px, 2vw);
+  bottom: 0;
+  z-index: 4;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(12px, 1.6vw, 24px);
+}
+#mainvisual .character {
+  position: relative;
+}
+#mainvisual .character .img {
+  width: clamp(340px, 34vw, 520px);
+}
+#mainvisual .character .img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.18));
+}
+#mainvisual .karateka {
+  position: relative;
+  margin-bottom: clamp(56px, 7vw, 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#mainvisual .karateka .img {
+  width: clamp(95px, 30vw, 220px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  margin-bottom: 10px;
+}
+#mainvisual .karateka .img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+#mainvisual .karateka .text {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 0;
+  text-shadow: none;
+  line-height: 28px;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+
 
 /* --------------------------------
 nav-menu
@@ -1020,11 +1061,17 @@ TB
     left: 6%;
     width: min(50%, 520px);
   }
-  #mainvisual .character {
+  #mainvisual .mainvisual-cast {
     right: 12px;
   }
   #mainvisual .character .img {
     width: clamp(280px, 30vw, 420px);
+  }
+  #mainvisual .karateka {
+    margin-bottom: clamp(36px, 5vw, 80px);
+  }
+  #mainvisual .karateka .img {
+    width: clamp(72px, 9vw, 120px);
   }
   #mainvisual .concept-title {
     font-size: 2.2rem;
@@ -1143,13 +1190,21 @@ SP
     left: 5%;
     width: 68%;
   }
-  #mainvisual .character {
+  #mainvisual .mainvisual-cast {
     right: 0;
     bottom: 0;
+    gap: 8px;
   }
   #mainvisual .character .img {
-    width: clamp(170px, 60vw, 240px);
+    width: clamp(150px, 55vw, 240px);
     opacity: 0.95;
+  }
+  #mainvisual .karateka {
+    margin-bottom: 10px;
+  }
+  #mainvisual .karateka .img {
+    width: clamp(58px, 28vw, 86px);
+    border-width: 3px;
   }
   #mainvisual .concept-title {
     font-size: 1.5rem;
@@ -1194,7 +1249,14 @@ SP
   #mainvisual .swiper-button-next  {
     display: none;
   }
+#mainvisual .karateka .text {
+  font-size: 0.7rem;
+  line-height: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  padding: 5px;
 
+}
   /* --------------------------------
   [SP]reason
   -------------------------------- */
