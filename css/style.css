@@ -610,6 +610,7 @@ service
   justify-content: space-between;
   gap: 0 2%; 
   text-align: center;
+  margin-bottom: 50px;
 }
 #service .list-2.flex .text {
   background-color: var(--sub-color);
@@ -627,15 +628,49 @@ service
   object-fit: cover;
   display: block;
 }
+#service .cleannig-price-title {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+#service .cleannig-price-title::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  display: inline-block;
+  width: 120px;
+  height: 1px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+
+
 #service .price-table {
   border-collapse: collapse;
   margin-bottom: 50px;
+  width: 100%;
 }
 #service .price-table th,
 #service .price-table td {
-  padding: 10px 40px 10px 30px;  
+  padding: 10px 40px 10px 30px; 
+  
 }
-
+#service .price-table th {
+  background-color: var(--sub-color);
+}
+#service .price-table .menu {
+  width: 35%;
+}
+#service .price-table .price-1 {
+  width: 32%;
+}
+#service .price-table .price-2 {
+  text-align: center;
+} 
 
 /* --------------------------------
 works
