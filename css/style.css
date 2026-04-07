@@ -64,7 +64,7 @@ li {
   margin: 0 auto;
 }
 .wrapper-03  {
-  max-width: 650px;
+  max-width: 750px;
   padding: 0 16px;
   margin: 0 auto;
 }
@@ -627,6 +627,15 @@ service
   object-fit: cover;
   display: block;
 }
+#service .price-table {
+  border-collapse: collapse;
+  margin-bottom: 50px;
+}
+#service .price-table th,
+#service .price-table td {
+  padding: 10px 40px 10px 30px;  
+}
+
 
 /* --------------------------------
 works
