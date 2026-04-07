@@ -330,11 +330,11 @@ mainvisual
   position: absolute;
   top: 16%;
   left: 8%;
-  width: min(46%, 620px);
+  width: min(50%, 750px);
   z-index: 3;
 }
 #mainvisual .concept-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 800;
   line-height: 70px;
   letter-spacing: 0rem;
@@ -344,6 +344,10 @@ mainvisual
     0 0 6px rgba(255, 255, 255, 0.85),
     0 0 14px rgba(255, 255, 255, 0.55),
     0 2px 8px rgba(255, 255, 255, 0.45);
+}
+#mainvisual .concept .country .list .item .img {
+  background-color: var(--bg-white);
+  padding: 3px;
 }
 #mainvisual .sub-copy {
   font-size: 2rem;
@@ -356,14 +360,14 @@ mainvisual
     0 2px 6px rgba(255, 255, 255, 0.4);
 }
 #mainvisual .text {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-shadow:
     0 0 4px rgba(255, 255, 255, 0.75),
     0 0 10px rgba(255, 255, 255, 0.45);
 }
-#mainvisual .coutry .list {
+#mainvisual .country .list {
   display: flex;
   justify-content: space-between;
   gap: 0 10px;
@@ -1222,7 +1226,7 @@ SP
     font-size: 1.1rem;
     margin-bottom: 10px;
   }
-  #mainvisual .coutry .list {
+  #mainvisual .country .list {
     width: min(100%, 240px);
     margin-bottom: 24px;
   }
