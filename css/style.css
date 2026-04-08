@@ -646,9 +646,6 @@ service
   background-color: var(--accent-color);
   border-radius: 2px;
 }
-
-
-
 #service .price-table {
   border-collapse: collapse;
   margin-bottom: 50px;
@@ -656,8 +653,7 @@ service
 }
 #service .price-table th,
 #service .price-table td {
-  padding: 10px 40px 10px 30px; 
-  
+  padding: 11px 40px 11px 30px; 
 }
 #service .price-table th {
   background-color: var(--sub-color);
@@ -671,6 +667,12 @@ service
 #service .price-table .price-2 {
   text-align: center;
 } 
+#service .price-table .shop-menu {
+  width: 50%;
+}
+#service .price-table .shop-price {
+  width: 50%;
+}
 
 /* --------------------------------
 works
@@ -1139,6 +1141,9 @@ SP
     font-size: 0.9rem;
     margin-bottom: 8px;
   }
+  .wrapper-03 {
+    padding: 0;
+  }
 	.loading__logo {
     opacity: 0;
     animation: logo_fade 2s 0.5s forwards;
@@ -1322,6 +1327,9 @@ SP
   /* --------------------------------
   [SP]service
   -------------------------------- */
+  #service .house .en {
+    font-size: 1rem;
+  }
   #service .house .air.flex .desc,
   #service .house .air.flex .flex {
     width: 100%;
@@ -1356,6 +1364,18 @@ SP
   #service .list-2.flex .item .text {
     margin-bottom: 10px;
   }
+  #service .price-table {
+    font-size: 0.8rem;
+  }
+  #service .price-table .en {
+    font-size: 0.8rem;
+  }
+  #service .price-table th,
+  #service .price-table td {
+    padding: 4px 2px 4px 5px; 
+  }
+
+
 
   /* --------------------------------
   [SP]works
