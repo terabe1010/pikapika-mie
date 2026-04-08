@@ -1249,7 +1249,7 @@ SP
   #mainvisual .concept {
     top: 12%;
     left: 5%;
-    width: 68%;
+    width: 100%;
   }
   #mainvisual .mainvisual-cast {
     right: 0;
@@ -1268,7 +1268,7 @@ SP
     border-width: 3px;
   }
   #mainvisual .concept-title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     line-height: 40px;
     right: 2%;
     left: 2%;
