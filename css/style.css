@@ -1177,7 +1177,7 @@ SP
     display: none;
   }
   section {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
   /* --------------------------------
   [SP]animation
@@ -1344,6 +1344,10 @@ SP
   /* --------------------------------
   [SP]service
   -------------------------------- */
+  #service {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
   #service .house .en {
     font-size: 1rem;
   }
