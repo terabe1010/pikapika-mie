@@ -463,7 +463,6 @@ mainvisual
   padding: 5px;
 }
 
-
 /* --------------------------------
 nav-menu
 -------------------------------- */
@@ -660,8 +659,6 @@ service
 #service .price-table tr:nth-child(odd) {
   background-color: #f5f3f3;
 }
-
-
 #service .price-table th,
 #service .price-table td {
   padding: 11px 40px 11px 30px; 
@@ -904,7 +901,6 @@ faq
 #faq .faq-list .square-a {
   background-color: var(--bg-white);
   color: var(--success-color);
-  
 }
 
 /* --------------------------------
@@ -1396,8 +1392,6 @@ SP
     padding: 4px 2px 4px 5px; 
   }
 
-
-
   /* --------------------------------
   [SP]works
   -------------------------------- */
@@ -1426,6 +1420,7 @@ SP
   #message .flex .message .title {
     text-align: center;
   }
+
   /* --------------------------------
   [SP]pikapika
   -------------------------------- */
@@ -1460,6 +1455,7 @@ SP
   #flow .flex .item.shadow {
     width: 100%;
   }
+  
   /* --------------------------------
   [SP]faq
   -------------------------------- */
