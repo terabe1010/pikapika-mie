@@ -962,6 +962,83 @@ footer
   text-align: center;
 }
 
+/* --------------------------------
+policy
+-------------------------------- */
+.sub-page {
+  background: linear-gradient(180deg, #f7fbfe 0%, #ffffff 220px);
+}
+.sub-page-main {
+  padding-top: 140px;
+}
+.page-hero {
+  margin-bottom: 60px;
+}
+.page-hero .lead {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-sub);
+}
+.policy-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  padding: 48px 40px;
+  margin-bottom: 32px;
+}
+.policy-card:last-child {
+  margin-bottom: 0;
+}
+.policy-card .title {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  margin-bottom: 24px;
+  padding-left: 10px;
+  border-left: 5px solid var(--accent-color);
+}
+.policy-section {
+  margin-bottom: 28px;
+}
+.policy-section:last-child {
+  margin-bottom: 0;
+}
+.policy-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.policy-section p,
+.policy-section li {
+  color: var(--text-main);
+  line-height: 2;
+}
+.policy-list {
+  padding-left: 1.4em;
+}
+.policy-list li {
+  list-style: disc;
+  margin-bottom: 6px;
+}
+.policy-note {
+  margin-top: 30px;
+  padding: 18px 20px;
+  background-color: var(--sub-color);
+  border-left: 4px solid var(--main-color);
+}
+.policy-contact {
+  margin-top: 20px;
+}
+.policy-contact a {
+  color: var(--main-color);
+  font-weight: 600;
+}
+.policy-footer-link {
+  margin-top: 16px;
+}
+.policy-footer-link a {
+  color: var(--bg-white);
+}
+
 /*-------------------------------------------
 TB
 -------------------------------------------*/
@@ -1489,5 +1566,25 @@ SP
   #footer .flex .contact, 
   #footer .flex .info {
     width: 100%;
+  }
+
+  /* --------------------------------
+  [SP]policy
+  -------------------------------- */
+  .sub-page-main {
+    padding-top: 110px;
+  }
+  .page-hero {
+    margin-bottom: 40px;
+  }
+  .policy-card {
+    padding: 28px 18px;
+  }
+  .policy-card .title {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  .policy-section h3 {
+    font-size: 1rem;
   }
 }
