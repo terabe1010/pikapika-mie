@@ -931,8 +931,14 @@ aboutus
 #aboutus .flex .desc .text {
   margin-bottom: 10px;
 }
+#aboutus .map {
+  overflow: hidden;
+  line-height: 0;
+}
 #aboutus .map iframe {
+  display: block;
   width: 100%;
+  max-width: 100%;
   height: 300px;
 }
 #aboutus .flex .line {
