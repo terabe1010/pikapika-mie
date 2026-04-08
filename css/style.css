@@ -947,6 +947,15 @@ aboutus
   width: 40%;
 }
 
+#aboutus .desc .cta.text {
+  margin-bottom: 20px;
+}
+#aboutus .desc .cta .btn {
+  background-color: var(--success-color);
+  color: var(--bg-white);
+  padding: 10px 12px;
+}
+
 /* --------------------------------
 footer
 -------------------------------- */
