@@ -12,6 +12,20 @@
   });
 });
 
+window.addEventListener("load", () => {
+  const loading = document.querySelector("#loading");
+  if (!loading) return;
+
+  window.setTimeout(() => {
+    document.body.classList.remove("is-loading");
+    loading.classList.add("is-hidden");
+
+    window.setTimeout(() => {
+      loading.remove();
+    }, 900);
+  }, 700);
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("#header");
   const btn = document.querySelector(".hamburger");
