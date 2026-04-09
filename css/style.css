@@ -948,7 +948,9 @@ aboutus
 #aboutus .flex .line img {
   width: 40%;
 }
-
+#aboutus .desc .cta {
+  margin-top: 40px;
+}
 #aboutus .desc .cta.text {
   margin-bottom: 20px;
 }
