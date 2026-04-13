@@ -32,30 +32,58 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
   const mask = document.querySelector("#mask");
   const menuLinks = document.querySelectorAll("#menu-sp a");
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  const updateHeaderState = () => {
+    const currentScrollY = window.scrollY;
+    const threshold = window.innerWidth <= 768 ? 80 : 400;
+    const scrollingDown = currentScrollY > lastScrollY;
+    const scrollDelta = Math.abs(currentScrollY - lastScrollY);
+
+    if (currentScrollY > threshold) {
+      header.classList.add("is-fixed");
+
+      if (scrollingDown && scrollDelta > 4) {
+        header.classList.add("is-hidden");
+      } else if (!scrollingDown && scrollDelta > 4) {
+        header.classList.remove("is-hidden");
+      }
+    } else {
+      header.classList.remove("is-fixed", "is-hidden");
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  };
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      header.classList.add("is-fixed");
-    } else {
-      header.classList.remove("is-fixed");
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeaderState);
+      ticking = true;
     }
   });
+
+  updateHeaderState();
 
   if (btn) {
     btn.addEventListener("click", () => {
       body.classList.toggle("nav-open");
+      header.classList.remove("is-hidden");
     });
   }
 
   if (mask) {
     mask.addEventListener("click", () => {
       body.classList.remove("nav-open");
+      header.classList.remove("is-hidden");
     });
   }
 
   menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
       body.classList.remove("nav-open");
+      header.classList.remove("is-hidden");
     });
   });
 });
