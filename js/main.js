@@ -23,11 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateHeaderState = () => {
     const currentScrollY = window.scrollY;
-    const threshold = window.innerWidth <= 768 ? 80 : 400;
+    const isMobile = window.innerWidth <= 1200;
+    const threshold = isMobile ? 80 : 400;
     const scrollingDown = currentScrollY > lastScrollY;
     const scrollDelta = Math.abs(currentScrollY - lastScrollY);
 
-    if (currentScrollY > threshold) {
+    if (isMobile) {
+      if (currentScrollY > threshold && scrollingDown && scrollDelta > 4) {
+        header.classList.add("is-hidden");
+      } else if (!scrollingDown && scrollDelta > 4) {
+        header.classList.remove("is-hidden");
+      }
+
+      if (currentScrollY <= 0) {
+        header.classList.remove("is-hidden");
+      }
+    } else if (currentScrollY > threshold) {
       header.classList.add("is-fixed");
 
       if (scrollingDown && scrollDelta > 4) {

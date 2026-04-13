@@ -123,6 +123,7 @@ section {
   display: block;
 }
 
+/* --------------------------------
 animation
 -------------------------------- */
 .reveal,
@@ -1057,11 +1058,17 @@ TB
   [TB]header
   -------------------------------- */
   #header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     padding: 0;
     height: calc(60px + var(--safe-top));
     padding-top: var(--safe-top);
+    transform: translateY(0);
   }
   #header.is-fixed {
+    position: fixed;
     height: calc(60px + var(--safe-top));
   }
   #header .inner {
