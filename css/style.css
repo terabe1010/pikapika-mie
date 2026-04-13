@@ -1575,6 +1575,9 @@ SP
     height: 300px;
     margin-bottom: 10px;
   }
+  #aboutus .flex .img .inner-img.logo {
+    height: 200px;
+  } 
   #aboutus .flex .img {
     margin-bottom: 15px;
   }
