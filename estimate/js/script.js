@@ -77,5 +77,44 @@ document.getElementById("createBtn").addEventListener("click", () => {
 });
 
 document.getElementById("pdfBtn").addEventListener("click", () => {
-  html2pdf().from(document.getElementById("preview")).save();
+
+  const preview = document.getElementById("preview");
+
+  if (!preview.innerHTML.trim()) {
+    alert("先に見積りを作成してください");
+    return;
+  }
+
+  // クローン作成（これが重要）
+  const clone = preview.cloneNode(true);
+
+  clone.style.display = "block";
+  clone.style.position = "absolute";
+  clone.style.left = "-9999px";
+  clone.style.top = "0";
+  clone.style.width = "800px";
+  clone.style.background = "#fff";
+  clone.style.padding = "20px";
+
+  document.body.appendChild(clone);
+
+  const opt = {
+    margin: 10,
+    filename: '見積書.pdf',
+    image: { type: 'jpeg', quality: 1 },
+    html2canvas: {
+      scale: 2,
+      useCORS: true
+    },
+    jsPDF: {
+      unit: 'mm',
+      format: 'a4',
+      orientation: 'portrait'
+    }
+  };
+
+  html2pdf().set(opt).from(clone).save().then(() => {
+    document.body.removeChild(clone);
+  });
+
 });

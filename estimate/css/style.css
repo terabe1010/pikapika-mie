@@ -47,3 +47,81 @@ button {
   width:100%;
   margin-top:10px;
 }
+
+#preview {
+  background: #fff;
+  min-height: 300px;
+}
+
+/* =========================
+   スマホ対応
+========================= */
+@media screen and (max-width: 768px) {
+
+  body {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  /* カード1列 */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px;
+  }
+
+  .card img {
+    width: 100px;
+    height: 80px;
+    margin-right: 10px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  /* セットは中央 */
+  .set {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* 入力 */
+  input, select {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  /* ボタン */
+  button {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  /* 合計金額 */
+  #liveTotalBox {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  /* プレビュー */
+  #preview {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+}
