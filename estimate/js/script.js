@@ -118,3 +118,34 @@ document.getElementById("pdfBtn").addEventListener("click", () => {
   });
 
 });
+
+function printEstimate() {
+  const content = document.getElementById("preview").innerHTML;
+
+  if (!content.trim()) {
+    alert("先に見積りを作成してください");
+    return;
+  }
+
+  const win = window.open("", "", "width=800,height=600");
+
+  win.document.write(`
+    <html>
+    <head>
+      <title>見積書</title>
+      <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        td, th { border: 1px solid #000; padding: 8px; }
+        h2 { text-align: center; }
+      </style>
+    </head>
+    <body>
+      ${content}
+    </body>
+    </html>
+  `);
+
+  win.document.close();
+  win.print();
+}
