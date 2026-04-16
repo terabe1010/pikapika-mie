@@ -374,7 +374,7 @@ mainvisual
   display: flex;
   justify-content: space-between;
   gap: 0 10px;
-  width: min(100%, 360px);
+  width: min(100%, 400px);
   margin-bottom: 50px;
 }
 #mainvisual .contact {
@@ -567,7 +567,6 @@ service
 }
 #service .flex {
   justify-content: space-between;
-
 }
 #service .house .air.flex .desc,
 #service .house .air.flex .flex {
@@ -653,12 +652,9 @@ service
 }
 #service .price-table {
   border-collapse: collapse;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   width: 100%;
 }
-/* #service .price-table tr {
-  background-color: #f5f3f3;
-} */
 #service .price-table tr:nth-child(odd) {
   background-color: #f5f3f3;
 }
@@ -683,6 +679,10 @@ service
 }
 #service .price-table .shop-price {
   width: 50%;
+}
+#service .caution {
+  margin-bottom: 60px;
+  padding-left: 30px;
 }
 
 /* --------------------------------
@@ -1375,6 +1375,9 @@ SP
     left: 2%;
     margin-bottom: 20px;
   }
+  #mainvisual .concept .country .list .item .img {
+    padding: 1px;
+  }
   #mainvisual .sub-copy {
     font-size: 1.1rem;
     line-height: 30px;
@@ -1487,6 +1490,11 @@ SP
   #service .price-table th,
   #service .price-table td {
     padding: 4px 2px 4px 5px; 
+  }
+  #service .caution {
+    margin-bottom: 50px;
+    font-size: 0.9rem;
+    padding-left: 0;
   }
 
   /* --------------------------------
