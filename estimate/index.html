@@ -11,7 +11,7 @@
 <body>
 
 <header class="header">
-  <img src="img/logo.png" class="logo">
+  <img src="img/h_logo.svg" class="logo">
   <h1>簡単1分 見積りシミュレーション</h1>
 </header>
 
@@ -29,11 +29,11 @@
 </div>
 
 <div class="card" data-name="キッチン" data-empty="10000" data-live="11000">
-  <img src="img/kitchen.jpg"><p>キッチン</p>
+  <img src="img/kitchen.png"><p>キッチン</p>
 </div>
 
 <div class="card" data-name="レンジフード" data-empty="15000" data-live="16000">
-  <img src="img/kitchen.jpg"><p>レンジフード</p>
+  <img src="img/rangefood.png"><p>レンジフード</p>
 </div>
 
 <div class="card" data-name="トイレ" data-empty="7000" data-live="7000">
@@ -41,7 +41,7 @@
 </div>
 
 <div class="card" data-name="洗面台" data-empty="7000" data-live="7500">
-  <img src="img/toilet.jpg"><p>洗面台</p>
+  <img src="img/basin.png"><p>洗面台</p>
 </div>
 
 <div class="card" data-name="エアコン" data-empty="10000" data-live="10000">
@@ -62,9 +62,11 @@
 </div>
 
 <h2>お客様情報</h2>
-<input type="text" id="name" placeholder="お名前">
-<input type="text" id="address" placeholder="ご住所">
-<input type="text" id="tel" placeholder="電話番号">
+<div class="flex">
+  <input type="text" id="name" placeholder="お名前">
+  <input type="text" id="tel" placeholder="電話番号">
+  <input type="text" id="address" placeholder="ご住所">
+</div>
 
 <button id="createBtn">見積り作成</button>
 

@@ -4,11 +4,15 @@ const cards = document.querySelectorAll(".card");
 const type = document.getElementById("type");
 const qty = document.getElementById("qty");
 
+// ==========================
+// カード選択処理
+// ==========================
 cards.forEach(card => {
   card.addEventListener("click", () => {
 
     const name = card.dataset.name;
 
+    // 水回りセット選択時
     if (name === "水回りセット") {
       selectedItems = [{ name, price: getPrice(card) }];
       cards.forEach(c => c.classList.remove("selected"));
@@ -17,14 +21,16 @@ cards.forEach(card => {
       return;
     }
 
+    // セット解除
     selectedItems = selectedItems.filter(i => i.name !== "水回りセット");
+    document.querySelector(".set")?.classList.remove("selected");
 
     card.classList.toggle("selected");
 
     const index = selectedItems.findIndex(i => i.name === name);
 
     if (index > -1) {
-      selectedItems.splice(index,1);
+      selectedItems.splice(index, 1);
     } else {
       selectedItems.push({ name, price: getPrice(card) });
     }
@@ -33,10 +39,16 @@ cards.forEach(card => {
   });
 });
 
+// ==========================
+// 金額取得
+// ==========================
 function getPrice(card){
   return parseInt(type.value === "empty" ? card.dataset.empty : card.dataset.live);
 }
 
+// ==========================
+// リアルタイム合計
+// ==========================
 function updateTotal(){
   let total = 0;
 
@@ -57,69 +69,86 @@ function updateTotal(){
 type.addEventListener("change", updateTotal);
 qty.addEventListener("input", updateTotal);
 
+// ==========================
+// 見積書作成
+// ==========================
 document.getElementById("createBtn").addEventListener("click", () => {
 
+  const name = document.getElementById("name").value;
+  const address = document.getElementById("address").value;
+  const tel = document.getElementById("tel").value;
+
+  const today = new Date().toLocaleDateString();
+
   let total = 0;
-  let html = "<h2>お見積書</h2><table border='1' width='100%'><tr><th>項目</th><th>金額</th></tr>";
+
+  let html = `
+    <div style="text-align:center;">
+      <img src="img/h_logo.svg" style="width:120px;">
+      <h2>お見積書</h2>
+    </div>
+
+    <p>日付：${today}</p>
+
+    <p>
+      <strong>ピカピカ三重店</strong><br>
+      三重県亀山市中庄町630<br>
+      （株式会社エコ・プランニング内）<br>
+      TEL：080-3305-5601<br>
+      営業時間：8:00〜20:00（年中無休）
+    </p>
+
+    <hr>
+
+    <p>お名前：${name}</p>
+    <p>住所：${address}</p>
+    <p>電話：${tel}</p>
+
+    <table border="1" width="100%" cellpadding="8" style="border-collapse:collapse;">
+      <tr>
+        <th>項目</th>
+        <th>金額</th>
+      </tr>
+  `;
 
   selectedItems.forEach(item => {
     let price = item.price;
-    if(item.name === "エアコン"){ price *= qty.value; }
+
+    if(item.name === "エアコン"){
+      price *= qty.value;
+    }
+
     total += price;
 
-    html += `<tr><td>${item.name}</td><td>${price.toLocaleString()}円</td></tr>`;
+    html += `
+      <tr>
+        <td>${item.name}</td>
+        <td>${price.toLocaleString()}円</td>
+      </tr>
+    `;
   });
 
-  html += "</table>";
-  html += `<p>合計：${total.toLocaleString()}円</p>`;
+  html += `
+    </table>
+
+    <p style="text-align:right; font-size:18px; margin-top:10px;">
+      合計：<strong>${total.toLocaleString()}円（税込）</strong>
+    </p>
+
+    <p style="font-size:12px; margin-top:20px;">
+      ※本見積りは簡易見積りとなります。<br>
+      ※現地確認後、正式なお見積りをご提示させていただきます。
+    </p>
+  `;
 
   document.getElementById("preview").innerHTML = html;
 });
 
-document.getElementById("pdfBtn").addEventListener("click", () => {
-
-  const preview = document.getElementById("preview");
-
-  if (!preview.innerHTML.trim()) {
-    alert("先に見積りを作成してください");
-    return;
-  }
-
-  // クローン作成（これが重要）
-  const clone = preview.cloneNode(true);
-
-  clone.style.display = "block";
-  clone.style.position = "absolute";
-  clone.style.left = "-9999px";
-  clone.style.top = "0";
-  clone.style.width = "800px";
-  clone.style.background = "#fff";
-  clone.style.padding = "20px";
-
-  document.body.appendChild(clone);
-
-  const opt = {
-    margin: 10,
-    filename: '見積書.pdf',
-    image: { type: 'jpeg', quality: 1 },
-    html2canvas: {
-      scale: 2,
-      useCORS: true
-    },
-    jsPDF: {
-      unit: 'mm',
-      format: 'a4',
-      orientation: 'portrait'
-    }
-  };
-
-  html2pdf().set(opt).from(clone).save().then(() => {
-    document.body.removeChild(clone);
-  });
-
-});
-
+// ==========================
+// PDF（印刷）
+// ==========================
 function printEstimate() {
+
   const content = document.getElementById("preview").innerHTML;
 
   if (!content.trim()) {
@@ -135,7 +164,7 @@ function printEstimate() {
       <title>見積書</title>
       <style>
         body { font-family: sans-serif; padding: 20px; }
-        table { width: 100%; border-collapse: collapse; }
+        table { border-collapse: collapse; width: 100%; }
         td, th { border: 1px solid #000; padding: 8px; }
         h2 { text-align: center; }
       </style>
