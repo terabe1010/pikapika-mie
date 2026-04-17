@@ -681,9 +681,20 @@ service
   width: 50%;
 }
 #service .caution {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   padding-left: 30px;
 }
+#service .simulation {
+  text-align: center;
+  margin-bottom: 60px;
+}  
+#service .simulation .btn {
+  background-color: var(--accent-color);
+  padding: 15px 20px 15px 40px;
+  color: var(--bg-white);  
+}
+#service .simulation .btn
+
 
 /* --------------------------------
 works
