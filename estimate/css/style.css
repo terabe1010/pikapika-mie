@@ -59,6 +59,10 @@ button {
   gap: 10px 2%;
   flex-wrap: wrap;
 }
+#qty {
+  font-size: 18px;
+  padding: 8px;
+}
 #name,
 #address,
 #tel {
@@ -102,10 +106,11 @@ h2 span {
     align-items: center;
     text-align: left;
     padding: 10px;
+    flex-direction: column;
   }
   .card img {
-    width: 100px;
-    height: 80px;
+    width: 100%;
+    height: 200px;
     margin-right: 10px;
   }
   .card p {
