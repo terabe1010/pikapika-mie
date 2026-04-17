@@ -81,6 +81,12 @@ h2 span {
   padding-left: 10px;
   color: red;
 }
+#createBtn {
+  font-size: 18px;
+}
+#pdf {
+  font-size: 18px;
+}
 
 /* =========================
 スマホ対応
