@@ -7,76 +7,88 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
-
 <body>
+  <header class="header">
+    <img src="img/h_logo.svg" class="logo">
+    <h1>簡単1分 見積りシミュレーション</h1>
+  </header>
 
-<header class="header">
-  <img src="img/h_logo.svg" class="logo">
-  <h1>簡単1分 見積りシミュレーション</h1>
-</header>
+  <h2>料金タイプ<span>※以下選択してください</span></h2>
+  <select id="type">
+    <option value="empty">空室の場合</option>
+    <option value="live">在宅の場合</option>
+  </select>
 
-<h2>料金タイプ</h2>
-<select id="type">
-  <option value="empty">空室</option>
-  <option value="live">在宅</option>
-</select>
+  <h2>クリーニング箇所</h2>
+  <div class="grid">
+    <div class="card" data-name="浴室" data-empty="8000" data-live="9000">
+      <img src="img/bath.jpg"><p>浴室　8,000円～</p>
+    </div>
+    <div class="card" data-name="キッチン" data-empty="10000" data-live="11000">
+      <img src="img/kitchen.png"><p>キッチン　10,000円～</p>
+    </div>
+    <div class="card" data-name="レンジフード" data-empty="15000" data-live="16000">
+      <img src="img/rangefood.png"><p>レンジフード　15,000円～</p>
+    </div>
+    <div class="card" data-name="プロペラタイプ" data-empty="8000" data-live="8000">
+      <img src="img/propeller.png"><p>プロペラタイプ　8,000円～</p>
+    </div>
+    <div class="card" data-name="トイレ" data-empty="7000" data-live="7000">
+      <img src="img/toilet.png"><p>トイレ　7,000円～</p>
+    </div>
+    <div class="card" data-name="洗面台" data-empty="7000" data-live="7500">
+      <img src="img/basin.png"><p>洗面台　7,000円～</p>
+    </div>
+    <div class="card" data-name="窓・サッシ（～0.5㎡）" data-empty="2000" data-live="2500">
+      <img src="img/window.png"><p>窓・サッシ（～0.5㎡）　2,000円～</p>
+    </div>
+    <div class="card" data-name="ベランダ" data-empty="10000" data-live="10000">
+      <img src="img/veranda.png"><p>ベランダ　10,000円～</p>
+    </div>
+    <div class="card" data-name="エアコン" data-empty="10000" data-live="10000">
+      <img src="img/aircon.jpg"><p>エアコン　10,000円～</p>
+    </div>
+    <div class="card" data-name="お掃除機能付きエアコン" data-empty="20000" data-live="20000">
+      <img src="img/aircon.jpg"><p>お掃除機能付きエアコン　20,000円～</p>
+    </div>
+    <div class="card" data-name="業務用4方向エアコン" data-empty="25000" data-live="25000">
+      <img src="img/air conditioning02.jpg"><p>業務用4方向エアコン　25,000円～</p>
+    </div>
+    <div class="card" data-name="室外機" data-empty="6000" data-live="6000">
+      <img src="img/shitugaiki.png"><p>室外機　6,000円～</p>
+    </div>
+    <div class="card set" data-name="水回りセット" data-empty="35000" data-live="35000">
+      <img src="./img/kitchen03.jpg" alt=""><p>水回りセット（お得）　35,000円～</p>
+    </div>
+  </div>
 
-<h2>クリーニング箇所</h2>
-<div class="grid">
+  <h2>エアコン台数</h2>
+  <input type="number" id="qty" value="1" min="1">
 
-<div class="card" data-name="浴室" data-empty="8000" data-live="9000">
-  <img src="img/bath.jpg"><p>浴室</p>
-</div>
+  <div id="liveTotalBox">
+  現在の合計：<span id="liveTotal">0円</span>
+  </div>
+  <p class="text">
+    ※本見積りは簡易見積りとなります。<br>
+      ※汚れ具合によっては追加料金が発生する場合もあります。<br>
+      ※現地確認後、正式なお見積りをご提示させていただきます。
+  </p>
+  <h2>お客様情報<span>※ご入力をお願いします</span></h2>
+  <div class="flex">
+    <input type="text" id="name" placeholder="お名前">
+    <input type="text" id="tel" placeholder="電話番号">
+    <input type="text" id="address" placeholder="ご住所">
+  </div>
 
-<div class="card" data-name="キッチン" data-empty="10000" data-live="11000">
-  <img src="img/kitchen.png"><p>キッチン</p>
-</div>
+  <button id="createBtn">見積り作成</button>
 
-<div class="card" data-name="レンジフード" data-empty="15000" data-live="16000">
-  <img src="img/rangefood.png"><p>レンジフード</p>
-</div>
+  <div id="preview"></div>
 
-<div class="card" data-name="トイレ" data-empty="7000" data-live="7000">
-  <img src="img/toilet.png"><p>トイレ</p>
-</div>
+  <button onclick="printEstimate()">PDFダウンロード</button>
 
-<div class="card" data-name="洗面台" data-empty="7000" data-live="7500">
-  <img src="img/basin.png"><p>洗面台</p>
-</div>
+  <h2>料金表</h2>
+  <img src="img/price.png" style="width:80%;">
 
-<div class="card" data-name="エアコン" data-empty="10000" data-live="10000">
-  <img src="img/aircon.jpg"><p>エアコン</p>
-</div>
-
-<div class="card set" data-name="水回りセット" data-empty="35000" data-live="35000">
-  <p>水回りセット（お得）</p>
-</div>
-
-</div>
-
-<h2>エアコン台数</h2>
-<input type="number" id="qty" value="1" min="1">
-
-<div id="liveTotalBox">
-現在の合計：<span id="liveTotal">0円</span>
-</div>
-
-<h2>お客様情報</h2>
-<div class="flex">
-  <input type="text" id="name" placeholder="お名前">
-  <input type="text" id="tel" placeholder="電話番号">
-  <input type="text" id="address" placeholder="ご住所">
-</div>
-
-<button id="createBtn">見積り作成</button>
-
-<div id="preview"></div>
-
-<button onclick="printEstimate()">PDFダウンロード</button>
-
-<h2>料金表</h2>
-<img src="img/price.png" style="width:100%;">
-
-<script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

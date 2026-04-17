@@ -137,6 +137,7 @@ document.getElementById("createBtn").addEventListener("click", () => {
 
     <p style="font-size:12px; margin-top:20px;">
       ※本見積りは簡易見積りとなります。<br>
+      ※汚れ具合によっては追加料金が発生する場合もあります。<br>
       ※現地確認後、正式なお見積りをご提示させていただきます。
     </p>
   `;
