@@ -690,10 +690,32 @@ service
 }  
 #service .simulation .btn {
   background-color: var(--accent-color);
-  padding: 15px 20px 15px 40px;
-  color: var(--bg-white);  
+  padding: 13px 50px 13px 20px;
+  color: var(--bg-white);
+  position: relative; 
+  border: 1px solid var(--accent-color);
 }
-#service .simulation .btn
+#service .simulation .btn::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid var(--bg-white);
+  border-right: 1px solid var(--bg-white);
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  transform: rotate(45deg);
+  transition: ease 0.3s;
+}
+#service .simulation .btn:hover {
+  background-color: var(--bg-white);
+  color: var(--accent-color);
+}
+#service .simulation .btn:hover::before {
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  right: 13px;
+} 
 
 
 /* --------------------------------
@@ -1506,6 +1528,16 @@ SP
     margin-bottom: 50px;
     font-size: 0.9rem;
     padding-left: 0;
+  }
+  #service .simulation .btn {
+    padding: 10px 40px 10px 15px;
+    font-size: 0.9rem;
+  }
+  #service .simulation .btn::before {
+    width: 10px;
+    height: 10px;
+    top: 15px;
+    right: 20px;
   }
 
   /* --------------------------------
