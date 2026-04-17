@@ -79,6 +79,9 @@ document.getElementById("createBtn").addEventListener("click", () => {
   const tel = document.getElementById("tel").value;
 
   const today = new Date().toLocaleDateString();
+  const dayPreference = document.getElementById("dayPreference").value;
+  const timePreference = document.getElementById("timePreference").value;
+  const timeFree = document.getElementById("timeFree").value;
 
   let total = 0;
 
@@ -103,6 +106,10 @@ document.getElementById("createBtn").addEventListener("click", () => {
     <p>お名前：${name}</p>
     <p>住所：${address}</p>
     <p>電話：${tel}</p>
+    
+    <p>お電話可能日：${dayPreference}</p>
+    <p>時間帯：${timePreference}</p>
+    ${timeFree ? `<p>ご希望時間：${timeFree}</p>` : ""}
 
     <table border="1" width="100%" cellpadding="8" style="border-collapse:collapse;">
       <tr>

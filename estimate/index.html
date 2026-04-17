@@ -93,6 +93,33 @@
     <input type="text" id="address" placeholder="ご住所">
   </div>
 
+  <h3>お電話可能時間</h3>
+
+  <div>
+    <label>曜日指定</label>
+    <select id="dayPreference">
+      <option value="いつでもOK" class="day">いつでもOK</option>
+      <option value="平日のみ">平日のみ</option>
+      <option value="土日のみ">土日のみ</option>
+    </select>
+  </div>
+  <div>
+    <label>時間帯</label>
+    <select id="timePreference">
+      <option value="いつでもOK">いつでもOK</option>
+      <option value="午前 ①（8:00〜10:00）">午前 ①（8:00〜10:00）</option>
+      <option value="午前 ②（10:00〜12:00）">午前 ②（10:00〜12:00）</option>
+      <option value="午後 ①（12:00〜14:00）">午後 ①（12:00〜14:00）</option>
+      <option value="午後 ②（14:00〜16:00）">午後 ②（14:00〜16:00）</option>
+      <option value="午後 ③（16:00〜18:00）">午後 ③（16:00〜18:00）</option>
+      <option value="夜間（18:00〜20:00）">夜間（18:00〜20:00）</option>
+    </select>
+  </div>
+  <div>
+    <!-- 自由入力 -->
+    <input type="text" id="timeFree" placeholder="希望時間（例：14時頃）">
+  </div>
+
   <button id="createBtn">▶ 見積り作成</button>
 
   <div id="preview"></div>
