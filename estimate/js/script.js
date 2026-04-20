@@ -4,30 +4,24 @@ const cards = document.querySelectorAll(".card");
 const type = document.getElementById("type");
 const qty = document.getElementById("qty");
 
-// ==========================
-// カード選択処理
-// ==========================
-cards.forEach(card => {
+cards.forEach((card) => {
   card.addEventListener("click", () => {
-
     const name = card.dataset.name;
 
-    // 水回りセット選択時
-    if (name === "水回りセット") {
+    if (name === "キッチンセット") {
       selectedItems = [{ name, price: getPrice(card) }];
-      cards.forEach(c => c.classList.remove("selected"));
+      cards.forEach((current) => current.classList.remove("selected"));
       card.classList.add("selected");
       updateTotal();
       return;
     }
 
-    // セット解除
-    selectedItems = selectedItems.filter(i => i.name !== "水回りセット");
+    selectedItems = selectedItems.filter((item) => item.name !== "キッチンセット");
     document.querySelector(".set")?.classList.remove("selected");
 
     card.classList.toggle("selected");
 
-    const index = selectedItems.findIndex(i => i.name === name);
+    const index = selectedItems.findIndex((item) => item.name === name);
 
     if (index > -1) {
       selectedItems.splice(index, 1);
@@ -39,77 +33,71 @@ cards.forEach(card => {
   });
 });
 
-// ==========================
-// 金額取得
-// ==========================
-function getPrice(card){
-  return parseInt(type.value === "empty" ? card.dataset.empty : card.dataset.live);
+function getPrice(card) {
+  return parseInt(type.value === "empty" ? card.dataset.empty : card.dataset.live, 10);
 }
 
-// ==========================
-// リアルタイム合計
-// ==========================
-function updateTotal(){
+function updateTotal() {
   let total = 0;
 
-  selectedItems.forEach(item => {
+  selectedItems.forEach((item) => {
     let price = item.price;
 
-    if(item.name === "エアコン"){
-      price *= qty.value;
+    if (item.name === "エアコン") {
+      price *= Number(qty.value || 1);
     }
 
     total += price;
   });
 
-  document.getElementById("liveTotal").textContent =
-    total.toLocaleString() + "円";
+  document.getElementById("liveTotal").textContent = `${total.toLocaleString()}円`;
 }
 
-type.addEventListener("change", updateTotal);
+type.addEventListener("change", () => {
+  selectedItems = selectedItems.map((item) => {
+    const card = Array.from(cards).find((current) => current.dataset.name === item.name);
+    return card ? { ...item, price: getPrice(card) } : item;
+  });
+  updateTotal();
+});
+
 qty.addEventListener("input", updateTotal);
 
-// ==========================
-// 見積書作成
-// ==========================
 document.getElementById("createBtn").addEventListener("click", () => {
-
-  const name = document.getElementById("name").value;
-  const address = document.getElementById("address").value;
-  const tel = document.getElementById("tel").value;
-
-  const today = new Date().toLocaleDateString();
+  const name = document.getElementById("name").value || "未入力";
+  const address = document.getElementById("address").value || "未入力";
+  const tel = document.getElementById("tel").value || "未入力";
   const dayPreference = document.getElementById("dayPreference").value;
   const timePreference = document.getElementById("timePreference").value;
   const timeFree = document.getElementById("timeFree").value;
+  const today = new Date().toLocaleDateString("ja-JP");
 
   let total = 0;
 
   let html = `
     <div style="text-align:center;">
-      <img src="img/h_logo.svg" style="width:120px;">
-      <h2>お見積書</h2>
+      <img src="img/h_logo.svg" style="width:120px;" alt="ピカピカ三重店">
+      <h2>御見積書</h2>
     </div>
 
-    <p>日付：${today}</p>
+    <p>発行日: ${today}</p>
 
     <p>
       <strong>ピカピカ三重店</strong><br>
       三重県亀山市中庄町630<br>
-      （株式会社エコ・プランニング内）<br>
-      TEL：080-3305-5601<br>
-      営業時間：8:00〜20:00（年中無休）
+      エコ・プランニング<br>
+      TEL: 080-3305-5601<br>
+      営業時間: 8:00 - 20:00
     </p>
 
     <hr>
 
-    <p>お名前：${name}</p>
-    <p>住所：${address}</p>
-    <p>電話：${tel}</p>
-    
-    <p>お電話可能日：${dayPreference}</p>
-    <p>時間帯：${timePreference}</p>
-    ${timeFree ? `<p>ご希望時間：${timeFree}</p>` : ""}
+    <p>お名前: ${name}</p>
+    <p>ご住所: ${address}</p>
+    <p>電話番号: ${tel}</p>
+    <p>希望日: ${dayPreference}</p>
+    <p>希望時間: ${timePreference}</p>
+    ${timeFree ? `<p>ご要望: ${timeFree}</p>` : ""}
 
     <table border="1" width="100%" cellpadding="8" style="border-collapse:collapse;">
       <tr>
@@ -118,11 +106,11 @@ document.getElementById("createBtn").addEventListener("click", () => {
       </tr>
   `;
 
-  selectedItems.forEach(item => {
+  selectedItems.forEach((item) => {
     let price = item.price;
 
-    if(item.name === "エアコン"){
-      price *= qty.value;
+    if (item.name === "エアコン") {
+      price *= Number(qty.value || 1);
     }
 
     total += price;
@@ -139,37 +127,38 @@ document.getElementById("createBtn").addEventListener("click", () => {
     </table>
 
     <p style="text-align:right; font-size:18px; margin-top:10px;">
-      合計：<strong>${total.toLocaleString()}円（税込）</strong>
+      合計: <strong>${total.toLocaleString()}円</strong>
     </p>
 
     <p style="font-size:12px; margin-top:20px;">
-      ※本見積りは簡易見積りとなります。<br>
-      ※汚れ具合によっては追加料金が発生する場合もあります。<br>
-      ※現地確認後、正式なお見積りをご提示させていただきます。
+      ・本見積もりは概算見積もりとなります。<br>
+      ・汚れ具合によっては追加料金が発生する場合もあります。<br>
+      ・現地確認後、正式なお見積もりをご案内いたします。
     </p>
   `;
 
   document.getElementById("preview").innerHTML = html;
 });
 
-// ==========================
-// PDF（印刷）
-// ==========================
 function printEstimate() {
-
   const content = document.getElementById("preview").innerHTML;
 
   if (!content.trim()) {
-    alert("先に見積りを作成してください");
+    alert("先に見積書を作成してください。");
     return;
   }
 
   const win = window.open("", "", "width=800,height=600");
 
+  if (!win) {
+    alert("ポップアップがブロックされました。");
+    return;
+  }
+
   win.document.write(`
     <html>
     <head>
-      <title>見積書</title>
+      <title>御見積書</title>
       <style>
         body { font-family: sans-serif; padding: 20px; }
         table { border-collapse: collapse; width: 100%; }

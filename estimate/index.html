@@ -3,133 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>見積りシミュレーション</title>
+<title>簡単1分見積もりシミュレーション</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="./img/favicon.ico" />
+<link rel="stylesheet" href="css/site-chrome.css">
+<link rel="icon" href="../img/favicon.ico">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
-<body>
-  <header class="header">
-    <img src="img/h_logo.svg" class="logo">
-    <h1>簡単1分 見積りシミュレーション</h1>
+<body class="estimate-page">
+  <header class="estimate-site-header" id="estimate-header">
+    <div class="estimate-header-inner">
+      <p class="estimate-site-title">
+        <a class="estimate-logo-link" href="../index.html">
+          <img src="../img/h_logo.svg" alt="ピカピカ三重店">
+        </a>
+      </p>
+      <nav class="estimate-nav pc-nav" aria-label="グローバルナビゲーション">
+        <ul class="estimate-menu">
+          <li class="estimate-menu-item"><a href="../index.html">ホーム</a></li>
+          <li class="estimate-menu-item"><a href="../index.html#service">サービス・料金</a></li>
+          <li class="estimate-menu-item"><a href="../index.html#works">ビフォーアフター</a></li>
+          <li class="estimate-menu-item"><a href="../index.html#message">メッセージ</a></li>
+          <li class="estimate-menu-item"><a href="../index.html#flow">ご利用の流れ</a></li>
+          <li class="estimate-menu-item"><a href="../index.html#aboutus">会社情報</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="estimate-nav-sp">
+      <button class="estimate-hamburger" type="button" aria-label="メニューを開閉">
+        <span class="estimate-icon-bar"></span>
+        <span class="estimate-icon-bar"></span>
+        <span class="estimate-icon-bar"></span>
+      </button>
+    </div>
+    <div class="estimate-menu-sp" aria-label="モバイルメニュー">
+      <div class="estimate-menu-sp-logo">
+        <img src="../img/logo02.png" alt="ピカピカ">
+      </div>
+      <ul class="estimate-menu">
+        <li class="estimate-menu-item"><a href="../index.html">ホーム</a></li>
+        <li class="estimate-menu-item"><a href="../index.html#service">サービス・料金</a></li>
+        <li class="estimate-menu-item"><a href="../index.html#works">ビフォーアフター</a></li>
+        <li class="estimate-menu-item"><a href="../index.html#message">メッセージ</a></li>
+        <li class="estimate-menu-item"><a href="../index.html#flow">ご利用の流れ</a></li>
+        <li class="estimate-menu-item"><a href="../index.html#aboutus">会社情報</a></li>
+        <li class="estimate-menu-item"><a href="../policy.html">プライバシーポリシー</a></li>
+        <li class="estimate-menu-item"><a href="../tokusho.html">特定商取引法に基づく表記</a></li>
+        <li class="estimate-menu-item"><a href="../terms.html">利用規約</a></li>
+      </ul>
+    </div>
+    <div class="estimate-mask"></div>
   </header>
 
-  <h2>料金タイプ<span>※以下選択してください</span></h2>
-  <select id="type">
-    <option value="empty">空室の場合</option>
-    <option value="live">在宅の場合</option>
-  </select>
+  <main class="estimate-main">
+    <section class="estimate-page-hero">
+      <!-- <img src="../img/h_logo.svg" class="logo" alt="ピカピカ三重店"> -->
+      <h1>簡単1分見積もりシミュレーション</h1>
+    </section>
 
-  <h2>クリーニング箇所</h2>
-  <div class="grid">
-    <div class="card" data-name="浴室" data-empty="8000" data-live="9000">
-      <img src="img/bath.jpg">
-      <p>浴室　8,000円～</p>
-    </div>
-    <div class="card" data-name="キッチン" data-empty="10000" data-live="11000">
-      <img src="img/kitchen.png">
-      <p>キッチン　10,000円～</p>
-    </div>
-    <div class="card" data-name="レンジフード" data-empty="15000" data-live="16000">
-      <img src="img/rangefood.png">
-      <p>レンジフード　15,000円～</p>
-    </div>
-    <div class="card" data-name="プロペラタイプ" data-empty="8000" data-live="8000">
-      <img src="img/propeller.png">
-      <p>プロペラタイプ　8,000円～</p>
-    </div>
-    <div class="card" data-name="トイレ" data-empty="7000" data-live="7000">
-      <img src="img/toilet.png">
-      <p>トイレ　7,000円～</p>
-    </div>
-    <div class="card" data-name="洗面台" data-empty="7000" data-live="7500">
-      <img src="img/basin.png">
-      <p>洗面台　7,000円～</p>
-    </div>
-    <div class="card" data-name="窓・サッシ（～0.5㎡）" data-empty="2000" data-live="2500">
-      <img src="img/window.png">
-      <p>窓・サッシ（～0.5㎡）　2,000円～</p>
-    </div>
-    <div class="card" data-name="ベランダ" data-empty="10000" data-live="10000">
-      <img src="img/veranda.png">
-      <p>ベランダ　10,000円～</p>
-    </div>
-    <div class="card" data-name="エアコン" data-empty="10000" data-live="10000">
-      <img src="img/aircon2.jpg">
-      <p>エアコン　10,000円～</p>
-    </div>
-    <div class="card" data-name="お掃除機能付きエアコン" data-empty="20000" data-live="20000">
-      <img src="img/aircon.jpg">
-      <p>お掃除機能付きエアコン　20,000円～</p>
-    </div>
-    <div class="card" data-name="業務用4方向エアコン" data-empty="25000" data-live="25000">
-      <img src="img/air conditioning02.jpg">
-      <p>業務用4方向エアコン　25,000円～</p>
-    </div>
-    <div class="card" data-name="室外機" data-empty="6000" data-live="6000">
-      <img src="img/shitugaiki.jpg">
-      <p>室外機　6,000円～</p>
-    </div>
-    <div class="card set" data-name="水回りセット" data-empty="35000" data-live="35000">
-      <img src="./img/kitchen03.jpg" alt="">
-      <p>水回りセット（お得）　35,000円～</p>
-    </div>
-  </div>
-
-  <h2>エアコン台数 <span>（※お掃除機能なし）</span></h2>
-  <input type="number" id="qty" value="1" min="1">
-
-  <div id="liveTotalBox">
-  現在の合計：<span id="liveTotal">0円</span>
-  </div>
-  <p class="text">
-    ※本見積りは簡易見積りとなります。<br>
-      ※汚れ具合によっては追加料金が発生する場合もあります。<br>
-      ※現地確認後、正式なお見積りをご提示させていただきます。
-  </p>
-  <h2>お客様情報<span>※ご入力をお願いします</span></h2>
-  <div class="flex">
-    <input type="text" id="name" placeholder="お名前">
-    <input type="text" id="tel" placeholder="電話番号">
-    <input type="text" id="address" placeholder="ご住所">
-  </div>
-
-  <h3>お電話可能時間</h3>
-
-  <div>
-    <label>曜日指定</label>
-    <select id="dayPreference">
-      <option value="いつでもOK" class="day">いつでもOK</option>
-      <option value="平日のみ">平日のみ</option>
-      <option value="土日のみ">土日のみ</option>
+    <h2>お住まいの状況 <span>まずは居住状況を選択してください</span></h2>
+    <select id="type">
+      <option value="empty">空室の場合</option>
+      <option value="live">在宅中の場合</option>
     </select>
-  </div>
-  <div>
-    <label>時間帯</label>
-    <select id="timePreference">
-      <option value="いつでもOK">いつでもOK</option>
-      <option value="午前 ①（8:00〜10:00）">午前 ①（8:00〜10:00）</option>
-      <option value="午前 ②（10:00〜12:00）">午前 ②（10:00〜12:00）</option>
-      <option value="午後 ①（12:00〜14:00）">午後 ①（12:00〜14:00）</option>
-      <option value="午後 ②（14:00〜16:00）">午後 ②（14:00〜16:00）</option>
-      <option value="午後 ③（16:00〜18:00）">午後 ③（16:00〜18:00）</option>
-      <option value="夜間（18:00〜20:00）">夜間（18:00〜20:00）</option>
-    </select>
-  </div>
-  <div>
-    <!-- 自由入力 -->
-    <input type="text" id="timeFree" placeholder="希望時間（例：14時頃）">
-  </div>
 
-  <button id="createBtn">▶ 見積り作成</button>
+    <h2>クリーニング箇所<span>※選択してください</span></h2>
+    <div class="grid">
+      <div class="card" data-name="浴室" data-empty="8000" data-live="9000">
+        <img src="img/bath.jpg" alt="浴室">
+        <p>浴室 8,000円〜</p>
+      </div>
+      <div class="card" data-name="キッチン" data-empty="10000" data-live="11000">
+        <img src="img/kitchen.png" alt="キッチン">
+        <p>キッチン 10,000円〜</p>
+      </div>
+      <div class="card" data-name="レンジフード" data-empty="15000" data-live="16000">
+        <img src="img/rangefood.png" alt="レンジフード">
+        <p>レンジフード 15,000円〜</p>
+      </div>
+      <div class="card" data-name="プロペラタイプ" data-empty="8000" data-live="8000">
+        <img src="img/propeller.png" alt="プロペラタイプ">
+        <p>プロペラタイプ 8,000円〜</p>
+      </div>
+      <div class="card" data-name="トイレ" data-empty="7000" data-live="7000">
+        <img src="img/toilet.png" alt="トイレ">
+        <p>トイレ 7,000円〜</p>
+      </div>
+      <div class="card" data-name="洗面台" data-empty="7000" data-live="7500">
+        <img src="img/basin.png" alt="洗面台">
+        <p>洗面台 7,000円〜</p>
+      </div>
+      <div class="card" data-name="窓・サッシ（0.5平米）" data-empty="2000" data-live="2500">
+        <img src="img/window.png" alt="窓・サッシ">
+        <p>窓・サッシ（0.5平米） 2,000円〜</p>
+      </div>
+      <div class="card" data-name="ベランダ" data-empty="10000" data-live="10000">
+        <img src="img/veranda.png" alt="ベランダ">
+        <p>ベランダ 10,000円〜</p>
+      </div>
+      <div class="card" data-name="エアコン" data-empty="10000" data-live="10000">
+        <img src="img/aircon2.jpg" alt="エアコン">
+        <p>エアコン 10,000円〜</p>
+      </div>
+      <div class="card" data-name="お掃除機能付きエアコン" data-empty="20000" data-live="20000">
+        <img src="img/aircon.jpg" alt="お掃除機能付きエアコン">
+        <p>お掃除機能付きエアコン 20,000円〜</p>
+      </div>
+      <div class="card" data-name="業務用4方向エアコン" data-empty="25000" data-live="25000">
+        <img src="img/air conditioning02.jpg" alt="業務用4方向エアコン">
+        <p>業務用4方向エアコン 25,000円〜</p>
+      </div>
+      <div class="card" data-name="室外機" data-empty="6000" data-live="6000">
+        <img src="img/shitugaiki.jpg" alt="室外機">
+        <p>室外機 6,000円〜</p>
+      </div>
+      <div class="card set" data-name="キッチンセット" data-empty="35000" data-live="35000">
+        <img src="img/kitchen03.jpg" alt="キッチンセット">
+        <p>キッチンセット 35,000円〜</p>
+      </div>
+    </div>
 
-  <div id="preview"></div>
+    <h2>エアコン台数 <span>通常エアコンのみ対象です</span></h2>
+    <input type="number" id="qty" value="1" min="1">
 
-  <button onclick="printEstimate()" id="pdf">▶ PDFダウンロード</button>
+    <div id="liveTotalBox">
+      現在の概算見積: <span id="liveTotal">0円</span>
+    </div>
+    <p class="text">
+      ・本見積もりは概算見積もりとなります。<br>
+      ・汚れ具合によっては追加料金が発生する場合もあります。<br>
+      ・現地確認後、正式なお見積もりをご案内いたします。
+    </p>
 
-  <h2>料金表</h2>
-  <img src="img/price.png" style="width:80%;">
+    <h2>お客様情報 <span>ご希望日時も入力できます</span></h2>
+    <div class="flex">
+      <input type="text" id="name" placeholder="お名前">
+      <input type="text" id="tel" placeholder="電話番号">
+      <input type="text" id="address" placeholder="ご住所">
+    </div>
+
+    <h3>ご希望日時</h3>
+
+    <div>
+      <label for="dayPreference">希望日</label>
+      <select id="dayPreference">
+        <option value="いつでもOK">いつでもOK</option>
+        <option value="平日のみ">平日のみ</option>
+        <option value="土日のみ">土日のみ</option>
+      </select>
+    </div>
+    <div>
+      <label for="timePreference">希望時間</label>
+      <select id="timePreference">
+        <option value="いつでもOK">いつでもOK</option>
+        <option value="8:00 - 10:00">8:00 - 10:00</option>
+        <option value="10:00 - 12:00">10:00 - 12:00</option>
+        <option value="12:00 - 14:00">12:00 - 14:00</option>
+        <option value="14:00 - 16:00">14:00 - 16:00</option>
+        <option value="16:00 - 18:00">16:00 - 18:00</option>
+        <option value="18:00 - 20:00">18:00 - 20:00</option>
+      </select>
+    </div>
+    <div>
+      <input type="text" id="timeFree" placeholder="ご希望があれば自由にご記入ください">
+    </div>
+
+    <button id="createBtn">見積書を作成</button>
+
+    <div id="preview"></div>
+
+    <button onclick="printEstimate()" id="pdf">PDFをダウンロード</button>
+
+    <h2>料金表</h2>
+    <img src="img/price.png" style="width:80%;" alt="料金表">
+  </main>
+
+  <footer class="estimate-site-footer">
+    <p class="estimate-copy">
+      &copy; ピカピカ三重店 All rights reserved
+    </p>
+    <p class="estimate-footer-link">
+      <a href="../policy.html">プライバシーポリシー</a>
+    </p>
+    <p class="estimate-footer-link">
+      <a href="../tokusho.html">特定商取引法に基づく表記</a> /
+      <a href="../terms.html">利用規約</a>
+    </p>
+  </footer>
 
   <script src="js/script.js"></script>
+  <script src="js/site-chrome.js"></script>
 </body>
 </html>
