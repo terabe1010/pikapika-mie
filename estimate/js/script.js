@@ -133,7 +133,8 @@ document.getElementById("createBtn").addEventListener("click", () => {
     <p style="font-size:12px; margin-top:20px;">
       ・本見積もりは概算見積もりとなります。<br>
       ・汚れ具合によっては追加料金が発生する場合もあります。<br>
-      ・現地確認後、正式なお見積もりをご案内いたします。
+      ・現地確認後、正式なお見積もりをご案内いたします。<br>
+      ・別途交通費、駐車場代を頂く場合がございます。      
     </p>
   `;
 
