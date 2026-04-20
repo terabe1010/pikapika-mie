@@ -279,4 +279,9 @@ body.estimate-page img {
   .estimate-hamburger {
     right: 20px;
   }
+  .flex #name,
+  .flex #tel,
+  .flex #address {
+    width: 100%;
+  }
 }
