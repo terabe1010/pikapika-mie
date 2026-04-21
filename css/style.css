@@ -401,7 +401,7 @@ mainvisual
   text-shadow: none;
 }
 #mainvisual .contact .left .tel {
-  background-color: var(--main-color);
+  background-color: var(--accent-color);
   font-weight: normal;
   font-size: 1.05rem;
   padding: 11px 12px;
