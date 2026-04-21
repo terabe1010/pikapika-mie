@@ -107,7 +107,6 @@ select {
   width: 30%;
 }
 
-
 /* =========================
 スマホ対応
 ========================= */
@@ -176,11 +175,7 @@ select {
     margin-left: 0;
     font-size: 16px;
   }
-
 }
-
-
-
 
 @media screen and (max-width: 500px){
   .card img {
